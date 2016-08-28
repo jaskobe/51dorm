@@ -1,0 +1,490 @@
+@import "reset";
+$nav-height : 64px;
+//common
+*{
+  box-sizing: border-box;
+  font-family:PingFang-SC-Regular,"Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", 微软雅黑, Arial, sans-serif;
+
+}
+ul,li,h1,h2,h3,h4,p{
+  margin: 0;
+  padding: 0;
+}
+
+.content{
+  position: relative;
+  width: 100%;
+  background-color: $bg-gray;
+  padding-bottom: 10px;
+  padding-top: $nav-height;
+}
+.m-container{
+  position: relative;
+  width: 940px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+//nav
+nav{
+  position: fixed;
+  top:0;
+  height: $nav-height;
+  background-color: #fff;
+  box-shadow:0 6px 12px 0 rgba(0,0,0,0.04);
+  z-index: 999;
+  .nav-wrap{
+    width: 1080px;
+    height: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+
+
+    .nav-logo{
+      display: block;
+      float: left;
+      width: 123px;
+      height: 38px;
+      margin-top: 14px;
+      margin-right: 55px;
+      margin-left: 10px;
+      img{
+        width: 100%;
+      }
+    }
+    >ul{
+      a{
+        line-height: 64px;
+        color: #535061;
+        font-size: 16px;
+        margin-right: 6px;
+        &:hover,
+        &:active{
+          color: $brand-green;
+          background-color:#fff;
+        }
+      }
+    }
+
+    .nav-btn{
+      width: 60px;
+      height: 28px;
+      border-radius: 100px;
+      font-size: 14px;
+      line-height: 28px;
+      float: right;
+      text-align: center;
+      margin: 18px 5px;
+      &.reg{
+        /* 注册: */
+        color: #535061;
+        border: 1px solid #A4AAB3;
+      }
+      &.sign{
+        color: #fff;
+        background-color: $brand-green;
+      }
+      &:hover{
+        color: #fff;
+        border: $brand-green;
+        background-color: darken($brand-green,10%);
+      }
+    }
+    .nav-search{
+      width: 34%;
+      height: 40px;
+      float: right;
+      background-color: $bg-gray;
+      margin: 12px 20px 0 0;
+      padding: 0 14px;
+      color: $txt-black ;
+      @include reset-input;
+
+    }
+  }
+}
+@media all and (max-width: 950px){
+  nav{
+    .nav-wrap{
+      .nav-search{
+        display: none;
+      }
+    }
+  }
+}
+@media all and (max-width: 600px){
+  nav{
+    height: 50px;
+    .nav-wrap{
+      .nav-logo{
+        width: 90px;
+        height: 28px;
+        margin-top: 8px;
+        margin-right: 16px;
+      }
+      .sign,
+      .reg{
+        display: none;
+      }
+      >ul{
+        display: block;
+        overflow: hidden;
+        width: 100%;
+        height: 0;
+        padding: 0;
+        position: absolute;
+        top: 50px;
+        left: 0;
+        z-index: 99;
+        background-color: #F3F4F4;
+        li{
+          display: block;
+          height: 50px;
+          width: 100%;
+          text-align: center;
+        }
+        a{
+          line-height: 50px;
+          font-size: 15px;
+        }
+      }
+      #toggle {
+        position: relative;
+        height: 100%;
+        >input {
+          position: absolute;
+          top: 10px;
+          left: calc(100% - 40px);
+          width: 28px;
+          height: 26px;
+          z-index: 1;
+          opacity: 0;
+          cursor: pointer;
+          &:checked {
+            + span {
+              background: transparent;
+              &:after {
+                transform: rotate(45deg) translate(-1px, -8px);
+              }
+              &:before {
+                transform: rotate(-45deg) translate(-4px, 12px);
+              }
+            }
+           .nav-link{
+              height: 100px!important;
+              padding: 10px 0!important;
+            }
+          }
+        }
+        span {
+          position: absolute;
+          width: 28px;
+          height: 4px;
+          background: #666;
+          top: 23px;
+          right: 12px;
+          border-radius: 100px;
+          &:before, &:after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 4px;
+            background: #666;
+            top: -9px;
+            transition: 0.3s;
+            border-radius: 100px;
+          }
+          &:after {
+            top: 9px;
+          }
+        }
+      }
+
+    }
+
+  }
+}
+//footer
+footer{
+  background-color: $brand-green;
+  display: block;
+  height: 350px;
+  color: #fff;
+  padding-top: 40px;
+  .link{
+    text-align: center;
+    a{
+      display: inline-block;
+      padding: 0 12px;
+      margin-top: 10px;
+      font-size: 14px;
+      color: #fff;
+      border-right: 2px solid #fff;
+      &:last-child{
+        border: none;
+      }
+    }
+  }
+
+  .copy-txt{
+    font-size:12px;
+    color:#fff;
+    line-height:12px;
+    text-align:center;
+    margin-top: 70px;
+  }
+}
+.social-box{
+  margin-top: 72px;
+  text-align: center;
+  li{
+    display: inline-block;
+  }
+  i{
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-position-y: -216px;
+    margin: 0 18px;
+    &.icon-wx{
+      background-position-x: -60px;
+    }
+    &.icon-weibo{
+      background-position-x: -118px;
+    }
+    &.icon-qq{
+      background-position-x: 0;
+    }
+  }
+}
+//登录注册
+.sign-modal{
+  width: 380px!important;
+  //top:220px!important;
+  padding: 30px 40px;
+  text-align: center;
+  border-radius: 8px;
+  h2{
+    font-size:24px;
+    color:#535061;
+    margin-bottom: 30px;
+  }
+  .sign-input{
+    background-color:#f4f5f9;
+    border-radius:100px;
+    width:300px;
+    height:42px;
+    margin: 10px 0 0;
+    padding:0 20px 0 44px ;
+    font-size: 14px;
+    color: #333;
+    background-repeat: no-repeat;
+    -ms-background-position:18px 12px;
+    background-position: 18px 12px;
+    @include reset-input;
+    &.user{
+      background-image: url("../../dist/img/form/icon-form-user.png");
+
+    }
+    &.pwd{
+      background-image: url("../../dist/img/form/icon-form-lock.png");
+    }
+    &.phone{
+      background-image: url("../../dist/img/form/icon-form-phone.png");
+    }
+    &.email{
+      background-image: url("../../dist/img/form/icon-form-mail.png");
+    }
+  }
+  p{
+    overflow: hidden;
+    margin-top: 16px;
+    label{
+      float: left;
+      font-size: 14px;
+      color: #535061;
+    }
+    [type="checkbox"].filled-in:checked+label:after,
+    [type="checkbox"].filled-in:not(:checked)+label:after{
+      top: 5px;
+      left: 16px;
+      height: 14px;
+      width: 14px;
+      border-radius: 50%;
+    }
+    [type="checkbox"].filled-in:not(:checked)+label:after{
+
+      background-color: transparent;
+      border: 2px solid $brand-green;
+    }
+    [type="checkbox"].filled-in:checked+label:after{
+      background-color: $brand-green;
+      border: 2px solid $brand-green;
+      //border: none;
+    }
+    [type="checkbox"].filled-in:not(:checked)+label:before{
+      left: 2px;
+    }
+    [type="checkbox"].filled-in:checked+label:before{
+      top: 4px;
+      left: 16px;
+      width: 6px;
+      height: 10px;
+    }
+    a{
+      float: right;
+      font-size: 14px;
+      line-height: 24px;
+      color: $brand-green;
+    }
+  }
+  .btn{
+    width: 100%;
+    margin-top: 10px;
+    @include form-btn;
+  }
+  .social-box{
+    width: calc(100% + 80px);
+    margin-top: 36px;
+    margin-left: -40px;
+    margin-bottom: 0;
+    padding: 22px 0;
+    border-top: 1px solid #e7e7e7;
+  }
+  .bot-box{
+    color: #535061;
+    font-size: 14px;
+    margin-top: 20px;
+  }
+  .reg-btn-txt{
+    color: $brand-green;
+  }
+
+  //注册
+  input.verifi{
+    width: 50%;
+    float: left;
+  }
+  .verifi-btn{
+    width: 46%;
+    height: 42px;
+    float: right;
+    background-color: $brand-green;
+    margin: 10px 0 0;
+    border-radius: 100px;
+  }
+  .agree-txt{
+    margin: 0;
+    color: $txt-black-light;
+    line-height: 50px;
+    a{
+      color: $brand-green;
+    }
+  }
+  .reset-pwd{
+    margin: 30px 0;
+  }
+}
+
+//select
+$select-color: #6a737c;
+$select-background: #fff;
+$select-width: 100px;
+$select-height: 32px;
+.select-hidden {
+  display: none;
+  visibility: hidden;
+  padding-right: 10px;
+}
+.select {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  font-size: 16px;
+  color: $select-color;
+  width: $select-width;
+  height: $select-height;
+  margin-right: 20px;
+  &.select-large{
+    width: 200px;
+  }
+}
+.select-styled {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: $select-background;
+  padding: 0 15px;
+  font-size: 14px;
+  transition: all 0.2s ease-in;
+  border: 1px solid #e7e7e7;
+  border-radius: 100px;
+  line-height: 32px;
+  text-align: left;
+  &:after {
+    content:"";
+    width: 0;
+    height: 0;
+    border: 7px solid transparent;
+    border-color: #999999 transparent transparent transparent;
+    position: absolute;
+    top: 13px;
+    right: 10px;
+  }
+  &:hover {
+    background-color: darken($select-background, 2);
+  }
+  &:active, &.active {
+    background-color: darken($select-background, 5);
+    &:after {
+      top: 5px;
+      border-color: transparent transparent #999999 transparent;
+    }
+  }
+}
+
+.select-options {
+  display: none;
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  left: 0;
+  z-index: 999;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  background-color: darken($select-background, 5);
+  border: 1px solid #e7e7e7;
+  border-radius: 4px;
+  li {
+    margin: 0;
+    padding: 12px 0;
+    text-indent: 15px;
+    font-size: 14px;
+    //border-top: 1px solid darken($select-background, 10);
+    transition: all 0.15s ease-in;
+    &:hover {
+      color: $select-background;
+      background: $green-light;
+    }
+    &[rel="hide"] {
+      display: none;
+    }
+
+    &:first-child{
+      border-top-left-radius: 4px;
+      border-top-right-radius: 4px;
+    }
+    &:last-child{
+      border-bottom-left-radius: 4px;
+      border-bottom-right-radius: 4px;
+    }
+  }
+}
+//sprite
+.sprite-com{
+  background-image: url("../../dist/img/sprite/sprite-common.png");
+  background-repeat: no-repeat;
+}

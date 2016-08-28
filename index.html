@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    <title>51Dorm</title>
+    <link href="/favicon.ico" rel="Shortcut  Icon" type="images/x-icon">
+
+    <!--common style-->
+    <link type="text/css" rel="stylesheet" href="./dist/css/materialize.css"  media="screen,projection"/>
+    <link rel="stylesheet" href="./dist/css/animate.min.css">
+    <link rel="stylesheet" href="./dist/css/common.css">
+</head>
+
+<body>
+
+<!--private style-->
+<link rel="stylesheet" href="./dist/css/index.css">
+<!--private style end-->
+
+<!--nav-->
+<nav>
+    <div class="nav-wrap">
+        <a href="#" class="nav-logo">
+            <img src="./dist/img/logo.png" alt="51dorm">
+        </a>
+        <ul class="nav-link">
+            <li class="nav-active"><a href="/">首页</a></li>
+            <li><a href="/view/apartments.html">宿舍</a></li>
+            <li><a href="/view/apartments.html">房源</a></li>
+            <li><a href="/view/help-center.html">帮助</a></li>
+        </ul>
+        <div class="waves-effect waves-light nav-btn modal-trigger sign" href="#sign-modal">登录</div>
+        <div class="waves-effect waves-light nav-btn modal-trigger reg" href="#sign-modal">注册</div>
+
+        <!--mobile-->
+        <div id="toggle">
+            <input type="checkbox">
+            <span></span>
+        </div>
+    </div>
+</nav>
+
+<!--content-->
+<section class="carousel carousel-slider center banner" data-indicators="true">
+    <aside class="banner-content">
+        <h2>留学生宿舍预订</h2>
+        <div class="search-box">
+            <input id="search" type="text" placeholder="请输入城市或学校名称" class="active">
+            <a class="waves-effect waves-light btn">搜索</a>
+        </div>
+        <div class="tag-box">
+            <ul class="row">
+                <li><a href="#">热门城市</a></li>
+                <li><a href="#">London</a></li>
+                <li><a href="#">Manchester</a></li>
+                <li><a href="#">Liverpool</a></li>
+                <li><a href="#">Birmingham</a></li>
+                <li><a href="#">Leeds</a></li>
+            </ul>
+        </div>
+
+    </aside>
+    <div class="carousel-item banner-1" href="#one!">
+
+    </div>
+    <div class="carousel-item banner-2" href="#two!">
+        <h2>Second Panel</h2>
+        <p class="white-text">This is your second panel</p>
+    </div>
+    <div class="carousel-item banner-3" href="#three!">
+        <h2>Third Panel</h2>
+        <p class="white-text">This is your third panel</p>
+    </div>
+</section>
+
+<!--city-tab-->
+<section class="city-part">
+    <div class="top-bar">
+        <div class="circle-box">
+            <img src="dist/img/house.png" class="house" alt="留学生公寓">
+            <h2>留学生公寓</h2>
+            <h3>我们覆盖了300座城市，1800多个学校</h3>
+            <div class="flag-tab">
+                <div class="flag-box flag-en flag-active" tab-target="#map-en">
+                    <i></i>
+                    英国
+                </div>
+                <div class="flag-box flag-au" tab-target="#map-au">
+                    <i></i>
+                    澳洲
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="city-box">
+        <div class="en" id="map-en">
+            <img class="lazy" data-original="dist/img/index/map-en.png" alt="英国">
+            <a class="city-1" href="#"></a>
+            <a class="city-2" href="#"></a>
+            <a class="city-3" href="#"></a>
+        </div>
+        <div class="au" id="map-au" style="display: none">
+            <img src="dist/img/index/map-au.png" alt="澳洲">
+            <a class="city-1" href="#"></a>
+            <a class="city-2" href="#"></a>
+            <a class="city-3" href="#"></a>
+        </div>
+    </div>
+</section>
+
+<!--charact-->
+<section class="charact-part">
+    <ul class="charact-container row">
+        <li class="col l3 m3 s6">
+            <img class="lazy" data-original="dist/img/index/charact-1.png" alt="专业顾问">
+            <h4>专业顾问</h4>
+            <p>顾问专业,专业顾问</p>
+        </li>
+        <li class="col l3 m3 s6">
+            <img class="lazy" data-original="dist/img/index/charact-2.png" alt="零服务费">
+            <h4>零服务费</h4>
+            <p>零服务费，省钱省心</p>
+        </li>
+        <li class="col l3 m3 s6">
+            <img class="lazy" data-original="dist/img/index/charact-3.png" alt="闪电预订">
+            <h4>闪电预订</h4>
+            <p>极速预订，节省时间</p>
+        </li>
+        <li class="col l3 m3 s6">
+            <img class="lazy" data-original="dist/img/index/charact-4.png" alt="尊享入住">
+            <h4>尊享入住</h4>
+            <p>尊贵身份，安心入住</p>
+        </li>
+    </ul>
+</section>
+<!--flow-->
+<section class="flow-part">
+    <div class="top-box">
+        <i class="sprite-com icon-flow"></i>
+        预订流程
+    </div>
+    <img class="lazy flow-img" data-original="dist/img/index/flow-path.png" alt="预订流程">
+</section>
+<!--contact-->
+<section class="contact-part">
+    <ul class="row">
+        <li class="col l4 m4 s12">
+            <div class="sprite-com contact-block">
+                <i class="sprite-com icon-phone"></i>
+            </div>
+            010-23473890
+        </li>
+        <li class="col l4 m4 s12">
+            <div class="sprite-com contact-block">
+                <i class="sprite-com icon-mail"></i>
+            </div>
+            Dorm@51dorm.com
+        </li>
+        <li class="col l4 m4 s12">
+            <div class="sprite-com contact-block">
+                <i class="sprite-com icon-local"></i>
+            </div>
+            北京市海淀区北四环西路
+        </li>
+    </ul>
+</section>
+
+<!--热门城市框-->
+<div class="pop-wrap">
+    <ul class="pop-tab">
+        <li class="tab"><a href="#city" id="tab-city">按城市</a></li>
+        <li class="tab"><a href="#school">按学校</a></li>
+    </ul>
+    <div id="city">
+        <ul class="city-tab">
+            <li class="tab"><i class="sprite-com icon-hot"></i><a href="#city-hot">热门城市</a></li>
+            <li class="tab"><i class="sprite-com icon-en-min"></i><a href="#city-en">英国</a></li>
+            <li class="tab"><i class="sprite-com icon-au-min"></i><a href="#city-au">澳大利亚</a></li>
+        </ul>
+        <ul class="list-box row" id="city-hot">
+            <li class="col l3"><a href="#">伦敦</a></li>
+            <li class="col l3"><a href="#">曼彻斯特</a></li>
+            <li class="col l3"><a href="#">爱丁堡</a></li>
+            <li class="col l3"><a href="#">伯明翰</a></li>
+            <li class="col l3"><a href="#">格拉斯哥</a></li>
+            <li class="col l3"><a href="#">贝尔法</a></li>
+        </ul>
+        <ul class="list-box row" id="city-en">
+            <li class="col l3"><a href="#">伦敦</a></li>
+            <li class="col l3"><a href="#">曼彻斯特</a></li>
+            <li class="col l3"><a href="#">爱丁堡</a></li>
+            <li class="col l3"><a href="#">伯明翰</a></li>
+            <li class="col l3"><a href="#">格拉斯哥</a></li>
+            <li class="col l3"><a href="#">贝尔法</a></li>
+        </ul>
+        <ul class="list-box row" id="city-au">
+            <li class="col l3"><a href="#">伦敦</a></li>
+            <li class="col l3"><a href="#">曼彻斯特</a></li>
+            <li class="col l3"><a href="#">爱丁堡</a></li>
+            <li class="col l3"><a href="#">伯明翰</a></li>
+            <li class="col l3"><a href="#">格拉斯哥</a></li>
+            <li class="col l3"><a href="#">贝尔法</a></li>
+        </ul>
+    </div>
+    <div id="school">2</div>
+</div>
+
+<!--footer-->
+<footer>
+    <div class="container link">
+        <a>关于我们</a>
+        <a>加入我们</a>
+        <a>联系我们</a>
+        <a>服务声明</a>
+    </div>
+    <ul class="social-box">
+        <li>
+            <a>
+                <i class="sprite-com icon-wx"></i>
+            </a>
+        </li>
+        <li>
+            <a>
+                <i class="sprite-com icon-weibo"></i>
+            </a>
+        </li>
+        <li>
+            <a>
+                <i class="sprite-com icon-qq"></i>
+            </a>
+        </li>
+    </ul>
+    <p class="copy-txt">
+        ©2016  All rights reserved | 京ICP备15000930号-3
+    </p>
+</footer>
+
+
+<script type="text/javascript" src="./dist/js/jquery.min.js"></script>
+<script type="text/javascript" src="./dist/js/materialize.min.js"></script>
+<script type="text/javascript" src="./dist/js/jquery.lazyload.js"></script>
+<script type="text/javascript" src="./dist/js/wow.min.js"></script>
+<script type="text/javascript" src="./dist/js/common.js"></script>
+<script type="text/javascript" src="./dist/js/sign.js"></script>
+
+<!--private js-->
+<script type="text/javascript" src="./dist/js/index.js"></script>
+<script>
+    $(function(){
+        $('.banner').carousel({
+            full_width: true
+        });
+        $('.pop-tab').tabs();
+        $('.city-tab').tabs();
+
+
+    })
+</script>
+</body>
+</html>
+        

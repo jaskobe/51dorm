@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    <title>51Dorm</title>
+    <link href="/favicon.ico" rel="Shortcut  Icon" type="images/x-icon">
+
+    <!--common style-->
+    <link type="text/css" rel="stylesheet" href="/dist/css/materialize.css" media="screen,projection"/>
+    <link rel="stylesheet" href="/dist/css/animate.min.css">
+    <link rel="stylesheet" href="/dist/css/common.css">
+</head>
+
+<body>
+
+<!--nav-->
+<nav>
+    <div class="nav-wrap">
+        <a href="#" class="nav-logo">
+            <img src="/dist/img/logo.png" alt="51dorm">
+        </a>
+        <ul class="nav-link">
+            <li class="nav-active"><a href="/">首页</a></li>
+            <li><a href="/view/apartments.html">宿舍</a></li>
+            <li><a href="/view/apartments.html">房源</a></li>
+            <li><a href="/view/help-center.html">帮助</a></li>
+        </ul>
+        <div class="waves-effect waves-light nav-btn modal-trigger sign" href="#sign-modal">登录</div>
+        <div class="waves-effect waves-light nav-btn modal-trigger reg" href="#sign-modal">注册</div>
+        <input type="text" class="nav-search" placeholder="请输入城市和学校名称">
+        <!--mobile-->
+        <div id="toggle">
+            <input type="checkbox">
+            <span></span>
+        </div>
+    </div>
+</nav>
+
+
+<!--private style-->
+<link rel="stylesheet" href="/dist/css/nouislide.css">
+<link rel="stylesheet" href="/dist/css/apartments.css">
+<!--private style end-->
+<!--content-->
+<div class="content">
+    <div class="apartment-wrap">
+        <section class="select-box">
+            <div class="m-container row">
+                <div class="col l8 m8 col-select">
+                    <ul class="select-ul">
+                        <li>
+                            <span class="list-txt">国家</span>
+                            <a class="select-btn waves-effect ">英国</a>
+                            <a class="select-btn waves-effect ">澳洲</a>
+                        </li>
+                        <li>
+                            <span class="list-txt">切换城市</span>
+                            <select class="select-large" id="city-name">
+                                <option value="0" selected>伦敦</option>
+                                <option value="1">曼彻斯特</option>
+                                <option value="2">爱丁堡</option>
+                                <option value="3">伯明翰</option>
+                            </select>
+                        </li>
+                        <li>
+                            <span class="list-txt">选择学校</span>
+                            <select id="school-char">
+                                <option value="0" selected>不限</option>
+                                <option value="1">公立</option>
+                                <option value="2">私立</option>
+                            </select>
+                            <select id="school-type">
+                                <option value="hide">类型</option>
+                                <option value="0">小学</option>
+                                <option value="1">中学</option>
+                                <option value="1">大学</option>
+                            </select>
+                            <select class="select-large" id="school-name">
+                                <option value="hide">名称</option>
+                                <option value="0">学校一</option>
+                                <option value="1">学校二</option>
+                                <option value="2">学校三</option>
+                                <option value="3">学校四</option>
+                            </select>
+                        </li>
+                        <li>
+                            <span class="list-txt">选项</span>
+                            <ul class="radio-group">
+                                <li>
+                                    <input name="group1" type="radio" id="test1" />
+                                    <label for="test1">Red</label>
+                                </li>
+                                <li>
+                                    <input name="group1" type="radio" id="test2" />
+                                    <label for="test2">Red</label>
+                                </li>
+                                <li>
+                                    <input name="group1" type="radio" id="test3" />
+                                    <label for="test3">Red</label>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <span class="list-txt">价格区间</span>
+                            <div class="select-range range-double" id="price-range"></div>
+                            <div class="range-tag">
+                                <span class="tag-left">$<span class="tag-num">0</span></span>
+                                <span class="tag-right">$<span class="tag-num">2000+</span></span>
+                            </div>
+                        </li>
+
+                    </ul>
+
+                </div>
+                <div class="col l4 m4">
+                    <div class="map-img">
+                        <a class="map-view-btn waves-effect">地图找房</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="m-container apartment-box">
+            <div class="order-box">
+                <a class="order-btn order-default" href="javascript:;">默认排序</a>
+                <select class="select-large" id="order-price">
+                    <option value="hide">按价格</option>
+                    <option value="1">价格不限</option>
+                    <option value="2">金额从低到高</option>
+                    <option value="3">金额从高到低</option>
+                </select>
+                <select class="select-large" id="order-status">
+                    <option value="hide">按状态</option>
+                    <option value="1">不限</option>
+                    <option value="2">尚有空房</option>
+                    <option value="3">即将住满</option>
+                    <option value="3">已住满</option>
+                </select>
+            <span class="page right">
+                <a href="#" class="prev"><</a>
+                <span class="num current">1</span>
+                <span>/</span>
+                <span>8</span>
+                <a href="#" class="next">></a>
+            </span>
+            </div>
+            <ul class="list-box">
+                <li class="apartment-list row">
+                    <a href="#" class="img-box col l3">
+                        <img data-original="/dist/img/apartments/apartment-1.png" class="lazy" alt="">
+                    </a>
+                    <a href="#" class="info-box col l5">
+                        <h2>Margaret Street - Newtownn<span class="sprite-com icon-isfull">尚有空房</span></h2>
+                        <h3>227 Soledad Knolls Suite 539</h3>
+                        <p>租期：<span class="rent-time">24</span>周</p>
+                        <div class="tag-box">
+                            <span>推荐</span>
+                            <span>推荐</span>
+                            <span>推荐</span>
+                        </div>
+                    </a>
+                    <div class="price-box col l4">
+                        <h2>$4,000/月起</h2>
+                        <h3>$1,024(定金)</h3>
+                        <a href="#" class="waves-effect btn">立即预订</a>
+                    </div>
+                </li>
+                <li class="apartment-list row">
+                    <a href="#" class="img-box col l3">
+                        <img data-original="/dist/img/apartments/apartment-1.png" class="lazy" alt="">
+                    </a>
+                    <a href="#" class="info-box col l5">
+                        <h2>Margaret Street - Newtownn<span class="sprite-com icon-isfull">尚有空房</span></h2>
+                        <h3>227 Soledad Knolls Suite 539</h3>
+                        <p>租期：<span class="rent-time">24</span>周</p>
+                        <div class="tag-box">
+                            <span>推荐</span>
+                            <span>推荐</span>
+                            <span>推荐</span>
+                        </div>
+                    </a>
+                    <div class="price-box col l4">
+                        <h2>$4,000/月起</h2>
+                        <h3>$1,024(定金)</h3>
+                        <a href="#" class="waves-effect btn">立即预订</a>
+                    </div>
+                </li>
+                <li class="apartment-list row">
+                    <a href="#" class="img-box col l3">
+                        <img data-original="/dist/img/apartments/apartment-1.png" class="lazy" alt="">
+                    </a>
+                    <a href="#" class="info-box col l5">
+                        <h2>Margaret Street - Newtownn<span class="sprite-com icon-isfull">尚有空房</span></h2>
+                        <h3>227 Soledad Knolls Suite 539</h3>
+                        <p>租期：<span class="rent-time">24</span>周</p>
+                        <div class="tag-box">
+                            <span>推荐</span>
+                            <span>推荐</span>
+                            <span>推荐</span>
+                        </div>
+                    </a>
+                    <div class="price-box col l4">
+                        <h2>$4,000/月起</h2>
+                        <h3>$1,024(定金)</h3>
+                        <a href="#" class="waves-effect btn">立即预订</a>
+                    </div>
+                </li>
+
+            </ul>
+        </section>
+    </div>
+
+    <div class="map-box"></div>
+</div>
+
+
+<!--footer-->
+<footer>
+    <div class="container link">
+        <a>关于我们</a>
+        <a>加入我们</a>
+        <a>联系我们</a>
+        <a>服务声明</a>
+    </div>
+    <ul class="social-box">
+        <li>
+            <a>
+                <i class="sprite-com icon-wx"></i>
+            </a>
+        </li>
+        <li>
+            <a>
+                <i class="sprite-com icon-weibo"></i>
+            </a>
+        </li>
+        <li>
+            <a>
+                <i class="sprite-com icon-qq"></i>
+            </a>
+        </li>
+    </ul>
+    <p class="copy-txt">
+        ©2016  All rights reserved | 京ICP备15000930号-3
+    </p>
+</footer>
+
+
+<script type="text/javascript" src="/dist/js/jquery.min.js"></script>
+<script type="text/javascript" src="/dist/js/materialize.min.js"></script>
+<script type="text/javascript" src="/dist/js/jquery.lazyload.js"></script>
+<script type="text/javascript" src="/dist/js/wow.min.js"></script>
+<script type="text/javascript" src="/dist/js/common.js"></script>
+<script type="text/javascript" src="/dist/js/sign.js"></script>
+
+<!--private js-->
+<script type="text/javascript" src="/dist/js/nouislider.js"></script>
+<script type="text/javascript" src="/dist/js/apartments.js"></script>
+<script>
+    var slider = document.getElementById('price-range');
+    noUiSlider.create(slider, {
+        start: [0, 2000],
+        connect: true,
+        tooltips:false,
+        step: 1,
+        range: {
+            'min': 0,
+            'max': 2000
+        },
+        format: wNumb({
+            thousand: ',',
+            postfix: '$'
+        })
+    });
+
+</script>
+</body>
+</html>
+        

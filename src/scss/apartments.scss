@@ -1,0 +1,337 @@
+@import "reset";
+
+//公寓展示页
+.apartment-wrap{
+  width: 100%;
+  transition: 0.8s;
+}
+.select-box{
+  min-height: 370px;
+  padding: 26px 0;
+  background-color: #fff;
+
+  .select-ul{
+    display: block;
+    width: 100%;
+    float: left;
+    >li{
+      width: 100%;
+      display: block;
+      margin-top: 20px;
+      //overflow: hidden;
+      .list-txt{
+        display: inline-block;
+        width: 56px;
+        line-height: 32px;
+        float: left;
+        color: $txt-black-light;
+        font-size: 14px;
+        margin-right: 20px;
+      }
+    }
+    .select-btn{
+      display: inline-block;
+      width: 100px;
+      height: 31px;
+      color: $txt-black-light;
+      border-radius: 100px;
+      border: 1px solid #e7e7e7;
+      text-align: center;
+      line-height: 32px;
+      font-size: 14px;
+      transition: 0.5s;
+      margin-right: 20px;
+      &.active{
+        background-color: $brand-green;
+      }
+      &:hover{
+        background-color: $green-light;
+        border: 1px solid $green-light;
+        color: #fff;
+      }
+    }
+    .radio-group{
+      li{
+        display: inline-block;
+        margin-top: 4px;
+        [type="radio"]+label:before, [type="radio"]+label:after{
+          width: 14px;
+          height: 14px;
+          left: 4px;
+          top: 2px;
+        }
+        [type="radio"]:not(:checked)+label:before, [type="radio"]:not(:checked)+label:after{
+
+          border-radius: 4px;
+          border: 1px solid #e7e7e7;
+        }
+        [type="radio"]:checked+label:after, [type="radio"].with-gap:checked+label:after {
+          background-color: $brand-green;
+          z-index: 0;
+          border-radius: 4px;
+          border: none;
+
+        }
+      }
+    }
+
+    .select-range{
+      width: 520px;
+      max-width: calc(100% - 60px);
+      height: 6px;
+      background-color: #e7e7e7;
+      float: left;
+      top: 12px;
+    }
+    .range-tag{
+      margin-top: 20px;
+      clear: both;
+      padding-left: 60px;
+      span{
+        font-size: 14px;
+        color: $txt-black-light;
+        &.tag-left{
+          float: left;
+          margin-left: 10px;
+        }
+        &.tag-right{
+          float: right;
+        }
+      }
+
+    }
+    .noUi-background{
+      background-color: #e7e7e7;
+      border-radius: 100px;
+    }
+    .noUi-target{
+      border: none!important;
+    }
+    .noUi-connect{
+      background-color:$brand-green ;
+      background-image:linear-gradient(0, #6ccc99 0%, #82d279 100%);
+      box-shadow: none;
+      border-radius: 100px;
+    }
+    .noUi-handle{
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      border: 1px solid #e7e7e7;
+      background-color: #fff;
+      top: -10px;
+      box-shadow: none;
+      cursor: pointer;
+      &:before,
+      &:after{
+        display: none;
+      }
+      .range-label{
+        position: absolute;
+        top: 26px;
+        left: 4px;
+        font-size: 14px;
+        color: $txt-black-light;
+      }
+    }
+  }
+  .map-img{
+    position: relative;
+    text-align: center;
+    width: 280px;
+    height:280px;
+    margin-top: 10px;
+    @include bg-cover;
+    background-image: url("/dist/img/apartments/map-box.png");
+    .map-view-btn{
+      @include form-btn;
+      position: absolute;
+      bottom: 24px;
+      left: 50%;
+      width: 230px;
+      height: 40px;
+      margin-left: -115px;
+    }
+  }
+}
+
+//apartment-box
+.apartment-box{
+  a{
+    color: $txt-black-light;
+  }
+  .order-box{
+    width: 100%;
+    margin: 20px auto 0;
+    padding:0 20px;
+    height: 42px;
+    border-radius: 4px;
+    background: #fff;
+    font-size: 14px;
+    .order-btn{
+      text-align: center;
+      float: left;
+    }
+    .order-default{
+      display: inline-block;
+      width: 60px;
+      line-height: 42px;
+    }
+    .select{
+      margin-left: 20px;
+      &.select-large{
+        width: 140px;
+      }
+    }
+    .select-styled{
+      border: none;
+      line-height: 42px;
+      border-radius: 0;
+      &:after{
+        top: 18px;
+        right: 0;
+      }
+      &.active{
+        background: #fff;
+      }
+      &:hover{
+        background: #fff;
+      }
+    }
+    .select-styled:active:after, .select-styled.active:after{
+      top: 12px;
+    }
+    .select-options{
+      border-radius: 0;
+    }
+    .page{
+      line-height: 42px;
+      color:$txt-black-light;
+    }
+  }
+  .list-box{
+    width: 100%;
+    min-height: 180px;
+    margin: 10px 0 0;
+    .apartment-list{
+      background: #fff;
+      min-height: 180px;
+      padding: 24px;
+      overflow-y: hidden;
+      margin: 5px 0;
+      .item{
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+      }
+      .img-box{
+        height: 100%;
+        display: inline-block;
+        float: left;
+        img{
+          max-width: 100%;
+        }
+      }
+      .info-box{
+        float: left;
+        text-align: left;
+        h2{
+          color: $txt-black;
+          font-size: 18px;
+          line-height: 20px;
+        }
+        h3{
+          color: $txt-black-light;
+          font-size: 13px;
+          margin-top: 14px;
+        }
+        p{
+          color: $txt-black-light;
+          font-size: 13px;
+          margin-top: 14px;
+        }
+        .tag-box{
+          margin-top: 18px;
+          span{
+            display: inline-block;
+            padding: 4px 9px;
+            border: 1px solid $brand-green;
+            font-size: 12px;
+            color: $brand-green;
+            border-radius: 100px;
+          }
+        }
+        span.icon-isfull{
+          display: inline-block;
+          width: 60px;
+          height: 20px;
+          margin-left: 10px;
+          background-position: 0 -305px;
+          color: #fff;
+          font-size: 12px;
+          text-align: center;
+        }
+      }
+      .price-box{
+        float: left;
+        height: 100%;
+        position: relative;
+        text-align: center;
+        h2{
+          color: $brand-red;
+          font-size: 22px;
+          margin-top: 10px;
+        }
+        h3{
+          color: $txt-black-light;
+          font-size: 12px;
+          margin-top: 14px;
+        }
+        .btn{
+          margin-top: 44px;
+          @include form-btn;
+          padding: 0 10px;
+        }
+      }
+    }
+  }
+}
+
+//地图样式
+.map-box{
+  position: fixed;
+  top: 64px;
+  right: 0;
+  transform: translateX(100%);
+  background-color: lighten($brand-green,30%);
+  width: calc(100% - 375px);
+  height: 100%;
+  z-index: 999;
+  transition: 0.8s;
+}
+.map-view{
+  .apartment-wrap{
+    width: 375px;
+    .col-select{
+      width: 100%;
+    }
+    .select-box .select-ul .select-range{
+      width: 240px;
+    }
+    .select-box .select-ul .range-tag span.tag-right{
+      margin-right: 20px;
+    }
+    .apartment-box .order-box .select.select-large{
+      width: 114px;
+      margin: 0 10px;
+    }
+    .select-options li{
+      text-indent: 0;
+      text-align: center;
+    }
+
+  }
+  .map-box{
+    transform: translateX(0);
+  }
+}

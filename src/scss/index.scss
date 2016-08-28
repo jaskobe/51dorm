@@ -1,0 +1,491 @@
+@import "reset";
+
+//banner
+
+.banner{
+  height: 656px;
+  width: 100%;
+  background-color: #8E9294;
+  position: relative;
+  .banner-content{
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+    top: 220px;
+    text-align: center;
+
+    h2{
+      font-size:40px;
+      margin-top: 0;
+      margin-bottom: 50px;
+      color:#ffffff;
+      line-height:40px;
+      text-shadow:0 4px 8px rgba(0,0,0,0.30);
+    }
+    .search-box{
+      position: relative;
+      width: 700px;
+      max-width: 90%;
+      margin: 0 auto;
+      overflow: hidden;
+      input,
+      a{
+        height:48px;
+      }
+      input{
+        width: 100%;
+        background-color: #fff;
+        border-radius: 4px;
+        border: none;
+        outline: none;
+        padding-left:40px;
+        margin: 0;
+        box-sizing: border-box;
+        background-image: url("../../dist/img/icon-local.png");
+        background-repeat: no-repeat;
+        background-size: 14px 16px;
+        background-position: 16px;
+        &:focus,
+        &:active{
+          border-bottom: none;
+          box-shadow: none;
+        }
+
+      }
+      a{
+        position: absolute;
+        right: 0;
+        top:0;
+        width: 110px;
+        max-width: 15%;
+        padding: 0;
+        line-height: 48px;
+        background-color: $brand-green;
+        border-radius: 0;
+        border-top-right-radius: 4px;
+        border-bottom-right-radius: 4px;
+        box-shadow: none;
+      }
+    }
+    .tag-box{
+      width: 700px;
+      max-width: 90%;
+      margin: 12px auto 0;
+
+      ul{
+        display: block;
+        width: 100%;
+        margin: 0;
+        li{
+          padding: 0 10px;
+          margin-top: 10px;
+          margin-right: 10px;
+          height: 24px;
+          font-size:14px;
+          color:#ffffff;
+          line-height:24px;
+          opacity:0.5;
+          background:#000000;
+          border-radius:100px;
+          display: inline-block;
+          float: left;
+          a{
+            color: #fff;
+          }
+          &:hover{
+            opacity: 0.8;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+
+  }
+  .carousel-item{
+    @include bg-cover;
+    min-height: 656px !important;
+  }
+
+  .indicators .indicator-item{
+    width: 24px;
+    height: 4px;
+    border-radius: 100px;
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+
+  .banner-1{
+    background-image: url("../../dist/img/index/index-banner-a.jpg");
+  }
+  .banner-2{
+    background-image: url("../../dist/img/index/index-banner-b.jpg");
+  }
+}
+
+//city-part
+.city-part{
+  background-color: #F4F5F9;
+  min-height: 500px;
+  padding-bottom: 40px;
+  .top-bar{
+    position: relative;
+    background:#ffffff;
+    box-shadow:0 4px 8px 0 rgba(0,0,0,0.02);
+    border-radius:4px;
+    height:160px;
+    .circle-box{
+      position: absolute;
+      top: -50px;
+      left: 50%;
+      margin-left: -130px;
+      background:#ffffff;
+      box-shadow:0 10px 10px 0 rgba(0,0,0,0.02);
+      width:260px;
+      height:260px;
+      border-radius:100%;
+      text-align: center;
+      padding-top: 40px;
+      z-index: 99;
+
+      .house{
+        width: 36px;
+        height: 36px;
+      }
+      h2{
+        margin:14px 0 0;
+        font-size: 26px;
+        color: #0f2641;
+        font-weight: 500;
+      }
+      h3{
+        margin: 12px 0 0;
+        font-size: 14px;
+        color: #a4aab3;
+      }
+
+      //tab
+      .flag-tab{
+        width: 120px;
+        margin: 12px auto 0;
+        .flag-box{
+          width: 50%;
+          float: left;
+          padding: 0 5px;
+          position: relative;
+          cursor: pointer;
+          i{
+            display: block;
+            width: 48px;
+            height: 48px;
+            margin: 0 auto 6px;
+            border-radius: 50%;
+            background-image: url("../../dist/img/sprite/sprite-flag.png");
+            background-repeat: no-repeat;
+            background-position-y: 0;
+          }
+          &.flag-en{
+            i{
+              background-position-x: 0;
+            }
+          }
+          &.flag-au{
+            i{
+              background-position-x: -54px;
+            }
+          }
+          &.flag-active{
+            i{
+              background-position-y: -49px;
+              box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
+            }
+            &:after{
+              content: "";
+              display: block;
+              margin: 0 auto;
+              width: 6px;
+              height: 6px;
+              border-radius: 50%;
+              background-color: $brand-green;
+            }
+          }
+        }
+      }
+    }
+  }
+  .city-box{
+    text-align: center;
+    .en,
+    .au{
+      position: relative;
+      width: 720px;
+      margin: 0 auto;
+      max-width: 90%;
+      img{
+        margin-top: 110px;
+        max-width: 100%;
+      }
+      a{
+        position: absolute;
+        display: block;
+        //background-color: $brand-green;
+        //opacity: 0.5;
+        cursor: pointer;
+      }
+    }
+    .en{
+      .city-1{
+        width: 240px;
+        height: 240px;
+        top: 120px;
+      }
+      .city-2{
+        width: 280px;
+        height: 280px;
+        top: 156px;
+        right: 0;
+      }
+      .city-3{
+        width: 250px;
+        height: 250px;
+        bottom: 0;
+        left: 110px;
+      }
+    }
+    .au{
+      .city-1{
+        width: 240px;
+        height: 240px;
+        top: 120px;
+        left: 45px;
+      }
+      .city-2{
+        width: 280px;
+        height: 280px;
+        top: 124px;
+        right: 0;
+      }
+      .city-3{
+        width: 260px;
+        height: 260px;
+        bottom: 12px;
+        left: 10px;
+      }
+    }
+  }
+}
+
+//charact-part
+.charact-part{
+  background-image:linear-gradient(0, #6ccc99 0%, #82d279 100%);
+  box-shadow:0 -4px 8px 0 rgba(107,204,153,0.30);
+  min-height:380px;
+  padding: 110px 0 80px;
+  .charact-container{
+    width: 960px;
+    max-width: 90%;
+    margin: 0 auto;
+
+    li{
+      display: block;
+      float: left;
+      text-align: center;
+      color: #fff;
+      h4{
+        margin-top: 32px;
+        font-size: 20px;
+      }
+      p{
+        font-size:14px;
+        color:#ffffff;
+      }
+    }
+  }
+}
+
+
+//flow-part
+.flow-part{
+  position: relative;
+  text-align: center;
+  min-height: 900px;
+  background-color: #F4F5F9;
+  background-image: url("../../dist/img/index/tri-block.png");
+  background-position: top;
+  background-repeat: no-repeat;
+  .top-box{
+    width: 260px;
+    height: 150px;
+    position: absolute;
+    top: -45px;
+    left: 50%;
+    margin-left: -130px;
+    background-image: url("../../dist/img/index/half-circle.png");
+    background-position: top;
+    background-repeat: no-repeat;
+
+    font-size:26px;
+    color:#0f2641;
+    line-height:30px;
+    text-align:center;
+    font-weight: 500;
+    .icon-flow{
+      display: block;
+      width: 44px;
+      height: 44px;
+      margin: 60px auto 12px;
+      background-position: -50px -28px;
+    }
+  }
+  .flow-img{
+    margin-top: 160px;
+    margin-left: -50px;
+    max-width: 90%;
+  }
+}
+
+//contact
+.contact-part{
+  min-height: 330px;
+  padding: 75px 0;
+  @include bg-cover;
+  background-image: url("../../dist/img/index/bg-contact.jpg");
+
+  .row{
+    width: 630px;
+    max-width: 100%;
+    margin: 0 auto;
+    li{
+      display: block;
+      margin-top: 30px;
+      text-align: center;
+      color: #fff;
+      font-size: 16px;
+      .contact-block{
+        display: block;
+        width: 88px;
+        height: 100px;
+        margin: 0 auto 30px;
+        padding-top: 30px;
+        background-position: -292px -114px;
+        i{
+          display: block;
+          margin: 0 auto;
+          width: 40px;
+          height: 40px;
+          background-position-y: -70px;
+          &.icon-phone{
+            background-position-x: 2px;
+          }
+          &.icon-mail{
+            background-position-x: -38px;
+          }
+          &.icon-local{
+            background-position-x: -76px;
+          }
+      }
+
+
+      }
+    }
+  }
+}
+
+
+//热门城市
+.pop-wrap{
+  position: absolute;
+  width: 700px;
+  max-width: 90%;
+  min-height: 300px;
+  left: 50%;
+  top: 428px;
+  margin-left: -350px;
+  background-color: #fff;
+  border-radius: 4px;
+  z-index: 99;
+  @include cd-shadow;
+  display:none;
+
+  .pop-tab{
+    width: 100%;
+    height: 40px;
+    margin: 0;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    background-color: #f3f5f7;
+    li{
+      display: inline-block;
+      margin-left: 28px;
+      a{
+        display: inline-block;
+        color: #6a737c;
+        padding: 7px 0;
+        &.active{
+          color: $txt-black-light;
+          border-bottom: 3px solid $brand-green;
+        }
+      }
+    }
+  }
+
+  .city-tab{
+    width: 170px!important;
+    height: 100%;
+    float: left;
+    border-right: 1px solid #f3f5f7;
+    text-align: left;
+    li{
+      position: relative;
+      padding-left: 56px;
+      cursor: pointer;
+      margin: 10px 0;
+      i{
+        display:inline-block;
+        width: 24px;
+        height: 24px;
+        background-position-y: -276px;
+        position: absolute;
+        top: 4px;
+        left: 24px;
+        &.icon-hot{
+          background-position-x: -14px;
+        }
+        &.icon-en-min{
+          background-position-x: -44px;
+        }
+        &.icon-au-min{
+          background-position-x: -76px;
+        }
+      }
+      a{
+        display: block;
+
+        color: $txt-black-light;
+        font-size: 14px;
+        line-height: 30px;
+        &.active{
+          border-right: 3px solid $brand-green;
+          color: $txt-black;
+        }
+        &:hover{
+          color: $txt-black;
+        }
+      }
+    }
+
+  }
+  .list-box{
+    width: calc(100% - 170px);
+    float: left;
+    margin-top: 22px;
+    li{
+      a{
+        color: $txt-black;
+        font-size: 14px;
+        line-height: 36px;
+        &:hover{
+          color: $brand-green;
+        }
+      }
+    }
+  }
+}

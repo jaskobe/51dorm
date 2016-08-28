@@ -1,0 +1,44 @@
+//颜色
+$brand-green : rgb(108, 204, 153);
+$brand-red : #f65f6e;
+$green-light : lighten($brand-green,10%);
+$txt-black : #0f2641;
+$txt-black-light : #6a737c;
+
+$bg-gray : #f3f5f7;
+$border-gray : #e7e7e7;
+
+@mixin bg-cover{
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+//card-shadow
+@mixin cd-shadow{
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.02);
+}
+
+//reset-input
+@mixin reset-input{
+  box-shadow: none;
+  border: none;
+  box-sizing: border-box!important;
+  &:focus,
+  &:active{
+    border-bottom: none!important;
+    box-shadow: none!important;
+    outline: none!important;
+  }
+}
+//reset btn
+@mixin form-btn{
+  background:#6ccc99;
+  border-radius:100px;
+  height:38px;
+  font-size: 14px;
+  box-shadow: none;
+  color: #fff;
+  line-height: 38px;
+  text-align: center;
+  cursor: pointer;
+}
